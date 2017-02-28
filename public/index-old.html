@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<head>
+    <title>Youtube searcher app</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div id="container">
+        <!-- header -->
+        <header id="header">
+            <h1 id="title">Code test</h1>
+        </header>
+        <!-- Navigation -->
+        <nav id="menu" class="clearfix">
+            <h3>Search Youtube!</h3>
+            <input type="search" class="searchInput"  />
+            <button class="submitButton">Submit</button>
+        </nav> 
+        <!-- Main Content area -->
+        <section id="content">
+            <ul class="results"></ul>
+        </section>
+        <!-- Sidebar -->
+        <aside  id="sidebar">
+            
+            <!-- Sidebar content -->
+
+        </aside>
+        <!-- Footer -->
+        
+    </div>
+    <footer id="footer" class="clearfix">
+    </footer>
+    <script>
+        var xmlHttp = new XMLHttpRequest();
+
+        function processSearch(){
+
+            var apiKey = "AIzaSyCf6cpUPEoNprXWutfX-GHqdwrcaNuqehc";
+
+            if(xmlHttp.readyState==0 || xmlHttp.readyState==4){
+                searchTerm = encodeURIComponent(searchInput.value);
+                type = "video";
+                xmlHttp.open("GET", `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&part=snippet&type=${type}&q=${searchTerm}`, true);
+                xmlHttp.onreadystatechange = handleServerResponse;
+                xmlHttp.send(null);
+            } else {
+                setTimeout('process()', 1000);
+            }
+        }
+
+        function handleServerResponse(){
+            if(xmlHttp.readyState==4){
+                if(xmlHttp.status==200){
+                    videoResults = JSON.parse(xmlHttp.responseText).items;
+                    displayResults(videoResults);
+                    console.log("success");
+                } else {
+                    console.log(xmlHttp.status);
+                }
+            } else {
+                console.log("didn't make it: " + xmlHttp.readyState);
+            }
+        }
+
+        function displayResults(videoResults){
+            const html = videoResults.map(video => {
+                const videoTitle = video.snippet.title;
+                const videoAuthor = video.snippet.channelTitle;
+                const videoDescription = video.snippet.description;
+                const videoLink = `https://www.youtube.com/watch?${video.id.videoId}`;
+                return `
+                    <li>
+                        <span class="title">${videoTitle}</span>
+                        <span class="author">${videoAuthor}</span>
+                        <span class="description">${videoDescription}</span>
+                        <span class="link">${videoLink}</span>
+                    </li>
+                `;
+            }).join('');
+            searchResults.innerHTML = html;
+        }
+
+        const searchInput = document.querySelector('.searchInput');
+        const submitButton = document.querySelector('.submitButton');
+        const searchResults = document.querySelector('.results');
+
+        submitButton.addEventListener('click', processSearch);
+    </script>
+</body>
+</html>
