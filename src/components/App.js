@@ -2,6 +2,7 @@ import React from 'react';
 import SearchEntryForm from './SearchEntryForm';
 import SearchResult from './SearchResult';
 import VideoPlayer from './VideoPlayer';
+import youtubeKey from '../apikeys';
 
 class App extends React.Component {
 	constructor(){
@@ -29,13 +30,11 @@ class App extends React.Component {
     processSearch(search) {
     	
     	this.xmlHttp = new XMLHttpRequest();
-
-        const apiKey = "AIzaSyCf6cpUPEoNprXWutfX-GHqdwrcaNuqehc";
         
         if(this.xmlHttp.readyState===0 || this.xmlHttp.readyState===4){
         	console.log(search.searchInput);
         	const searchTerm = search.searchInput;
-            this.xmlHttp.open("GET", `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&part=snippet&type=video&q=${searchTerm}`, true);
+            this.xmlHttp.open("GET", `https://www.googleapis.com/youtube/v3/search?key=${youtubeKey}&part=snippet&type=video&q=${searchTerm}`, true);
             this.xmlHttp.onreadystatechange = this.handleServerResponse;
             this.xmlHttp.send(null);
         } else {

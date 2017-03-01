@@ -1,0 +1,5 @@
+node_modules/
+build/
+*.docx
+*.log*
+src/apikeys.js
