@@ -23,23 +23,24 @@ What things you need to install the software and how to install them
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+Download the project to a directory of your choice:
 
 ```
 git clone https://github.com/ZachAttack83/YoutubeBinge.git
 ```
 
+Install node_module dependencies
+
 ```
 npm install
 ```
 
+Add a Youtube API key into apikeys.js:
 ```
-Add a Youtube API key into apikeys.js 
 const youtubeKey = "<API KEY HERE>";
 ```
 
+To start up the dev server:
 ```
 npm run watch
 ```
@@ -52,7 +53,7 @@ This should start up your browser to localhost:3000
 npm run build
 ```
 
-This will create a React build that you can use to deploy up to a web server.
+This will create a React build in ./build/ that you can use to deploy up to a web server.
 
 ## Built With
 
@@ -71,7 +72,7 @@ Feel free to submit pull requests to improve this app
 
 ## License
 
-Open source - I don't care if you take this app and make it your own
+Open source - I don't care if you take this app and make it your own!
 
 ## Acknowledgments
 
