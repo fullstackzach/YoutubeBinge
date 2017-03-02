@@ -28,7 +28,7 @@ A step by step series of examples that tell you have to get a development env ru
 Say what the step will be
 
 ```
-git clone this repository
+git clone https://github.com/ZachAttack83/YoutubeBinge.git
 ```
 
 ```
@@ -58,6 +58,8 @@ This will create a React build that you can use to deploy up to a web server.
 
 * [ReactJS](https://facebook.github.io/react/) - The web framework used
 * [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes) - for responsive styling
+* [Gulp.js](http://www.gulpjs.com) - Used to automate my buildstep for autoprefixing my css
+* [Gulp autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) - Gulp autoprefixer was used to make the flexbox code I created cross-browser compatible
 
 ## Contributing
 
@@ -66,6 +68,10 @@ Feel free to submit pull requests to improve this app
 ## Authors
 
 * **Zach Willard**
+
+## License
+
+Open source - I don't care if you take this app and make it your own
 
 ## Acknowledgments
 
