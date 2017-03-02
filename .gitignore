@@ -2,4 +2,4 @@ node_modules/
 build/
 *.docx
 *.log*
-src/apikeys.js
+src/apikeys-mykey.js

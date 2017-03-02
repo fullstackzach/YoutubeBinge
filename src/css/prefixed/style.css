@@ -14,11 +14,6 @@ header, footer{
     padding: 3%;
 }
 
-footer {
-    width: 94%;
-    padding: 3%;
-}
-
 header {
     font-size: 40px;
 }
@@ -35,7 +30,7 @@ span {
     font-family: planetiumx, Tahoma, Geneva, sans-serif;
 }
 
-.search-form {
+.api-form, .search-form {
     text-align: center;
     padding: 10px;
 }
@@ -86,7 +81,7 @@ span {
         -ms-flex: 5; 
             flex: 5; 
     overflow: hidden; 
-    margin: 0 5px 0 0;
+    margin: 0 5px 0 5px;
 }  
 
 .video-player iframe {
@@ -97,11 +92,6 @@ span {
     height: 100%;
 }
 
-.watch-button {
-    z-index: 1;
-    float: left;
-}
-
 .watch-select-form {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -109,7 +99,6 @@ span {
     text-align: center;
     -ms-flex-item-align: center;
         align-self: center;
-    /* border: 1px blue solid; */
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
@@ -120,6 +109,11 @@ span {
         flex-basis: 100%;
 }
 
+@media (max-width: 1230px) {
+    span {
+        font-size: 13px;
+    }
+}
 
 @media (max-width: 1060px) {
 
@@ -128,14 +122,11 @@ span {
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
                 flex-direction: row;
-        /* border: 1px blue solid; */
     }
 
     .content-area {
         display: inline;
     }
-
-
 
     .result {
         margin: 5px 5px 5px 5px;

@@ -10,6 +10,7 @@ class App extends React.Component {
 		this.handleServerResponse = this.handleServerResponse.bind(this);
 		this.processSearch = this.processSearch.bind(this);
         this.watchVideo = this.watchVideo.bind(this);
+        this.displaySortOrder = this.displaySortOrder.bind(this);
 
 		this.state = {
       		videoResultSet: {},
@@ -17,24 +18,21 @@ class App extends React.Component {
     	};
 	}
 
+    /* Parse the response from a JSON into an object, and store it in state */
     handleServerResponse(){
-    	console.log(`got here: ${this.xmlHttp.readyState} and ${this.xmlHttp.status}`);
-
         if(this.xmlHttp.readyState===4 && this.xmlHttp.status===200){
-            var videoResultSet = [];
-            videoResultSet = JSON.parse(this.xmlHttp.responseText).items;
-            this.setState({ videoResultSet });
+            let videoResultSet = [];
+            videoResultSet = JSON.parse(this.xmlHttp.responseText).items;    
+            this.setState({ videoResultSet });            
         }
     }
 
+    /* Make the AJAX call and handle the response */
     processSearch(search) {
-    	
     	this.xmlHttp = new XMLHttpRequest();
         
         if(this.xmlHttp.readyState===0 || this.xmlHttp.readyState===4){
-        	console.log(search.searchInput);
-        	const searchTerm = search.searchInput;
-            this.xmlHttp.open("GET", `https://www.googleapis.com/youtube/v3/search?key=${youtubeKey}&part=snippet&type=video&q=${searchTerm}`, true);
+            this.xmlHttp.open("GET", `https://www.googleapis.com/youtube/v3/search?key=${youtubeKey}&part=snippet&order=${search.searchOrder}&type=video&q=${search.searchInput}`, true);
             this.xmlHttp.onreadystatechange = this.handleServerResponse;
             this.xmlHttp.send(null);
         } else {
@@ -42,9 +40,20 @@ class App extends React.Component {
         }
     }
 
-    watchVideo (selectedVideoFromResult) {
-        var selectedVideo = [];
-        selectedVideo = selectedVideoFromResult;
+    /* A function to sort search result elements by title, alpabetically */
+    displaySortOrder (a, b) {
+        const titleA = a.props.details.snippet.title.toLowerCase()
+        const titleB = b.props.details.snippet.title.toLowerCase();
+        if (titleA < titleB)
+            return -1;
+        if (titleA > titleB)
+            return 1;
+        return 0;
+    }
+
+    /* Called from SearchResult component, sets the state to the chosen video */
+    watchVideo (selectedVideoFromResult) {   
+        let selectedVideo = selectedVideoFromResult;
         this.setState({ selectedVideo });
     }
 
@@ -58,12 +67,12 @@ class App extends React.Component {
     			        {              
     			           	Object
                    				.keys(this.state.videoResultSet)
-    			           		.map(key => <SearchResult 
+                                .map(key => <SearchResult 
                                                 key={key} 
                                                 details={this.state.videoResultSet[key]} 
                                                 watchVideo={this.watchVideo}
                                             />
-                                    )
+                                    ).sort((a, b) => this.displaySortOrder(a, b))  /* sort the elements alphabetically */
     			        }
     			    </ul>
                     <div className="video-player">

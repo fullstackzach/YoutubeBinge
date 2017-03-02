@@ -16,4 +16,9 @@ class VideoPlayer extends React.Component {
 	}
 }
 
+VideoPlayer.propTypes = {
+  currentVideo: React.PropTypes.object.isRequired
+}
+
+
 export default VideoPlayer; 

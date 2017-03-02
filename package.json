@@ -1,9 +1,8 @@
 {
-  "name": "Codetest",
+  "name": "codetest",
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "autoprefixer-stylus": "0.10.0",
     "babel-eslint": "^7.1.1",
     "concurrently": "3.0.0",
     "eslint": "^3.12.2",
@@ -12,11 +11,9 @@
     "eslint-plugin-react": "^6.8.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
-    "react-scripts": "0.6.1",
-    "stylus": "0.54.5"
+    "react-scripts": "0.6.1"
   },
   "dependencies": {
-    "history": "4.2.0",
     "react": "15.3.2",
     "react-dom": "15.3.2",
     "react-router": "4.0.0-alpha.4"

@@ -2,19 +2,14 @@ import React from 'react';
 
 class SearchResult extends React.Component {
 	selectVideo (event) {
-		event.preventDefault();
 		this.props.watchVideo(this.props.details);
 	}
 
 	render () {
-		const details = this.props.details;
-        const title = details.snippet.title;
-        console.log(`+${title}+`);
 		return (
-			<li className="result">
-				<form ref={(input) => this.searchResult = input} className="watch-select-form" onClick={(e) => this.selectVideo(e)}>
-	                <span className="title">{title}</span>
-	                {/*<span className="author">Author: {author}</span>*/}
+			<li className="result" onClick={(e) => this.selectVideo(e)}>
+				<form ref={(input) => this.searchResult = input} className="watch-select-form">
+	                <span className="title">{this.props.details.snippet.title}</span>
 	            </form>
 			</li>
 		)
@@ -22,7 +17,8 @@ class SearchResult extends React.Component {
 }
 
 SearchResult.propTypes = {
-  watchVideo: React.PropTypes.func.isRequired
+  watchVideo: React.PropTypes.func.isRequired,
+  details: React.PropTypes.object.isRequired
 }
 
 export default SearchResult;
