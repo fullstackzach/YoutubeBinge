@@ -70,8 +70,8 @@ heroku open
 
 * [ReactJS](https://facebook.github.io/react/) - The web framework used
 * [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes) - for responsive styling
-* [Gulp.js](http://www.gulpjs.com) - Used to automate my buildstep for autoprefixing my css
-* [Gulp autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) - Gulp autoprefixer was used to make the flexbox code I created cross-browser compatible
+* [Gulp.js](http://www.gulpjs.com) - Used to automate my buildstep for autoprefixing my Flexbox CSS
+* [Gulp autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) - Gulp autoprefixer was used to make the flexbox code I created cross-browser compatible with ease
 * [Heroku](https://www.heroku.com) - Free app serving
 
 ## Contributing
