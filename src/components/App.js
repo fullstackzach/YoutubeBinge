@@ -18,12 +18,16 @@ class App extends React.Component {
     	};
 	}
 
+    componentWillMount(){
+        let videoResultSet = [];
+        this.setState({ videoResultSet });  
+    }
+
     /* Parse the response from a JSON into an object, and store it in state */
     handleServerResponse(){
         if(this.xmlHttp.readyState===4 && this.xmlHttp.status===200){
-            let videoResultSet = [];
-            videoResultSet = JSON.parse(this.xmlHttp.responseText).items;    
-            this.setState({ videoResultSet });            
+            let videoResultSet = JSON.parse(this.xmlHttp.responseText).items;    
+            this.setState({ videoResultSet });
         }
     }
 
@@ -61,7 +65,7 @@ class App extends React.Component {
 		return(
 			<div className="youtube-searcher-app">
 				<header>Youtube binge!</header>
-				<SearchEntryForm processSearch={this.processSearch}/>
+				<SearchEntryForm processSearch={this.processSearch} videoResultSet={this.state.videoResultSet}/>
                 <div className="content-area">
     			    <ul className="list-of-results">
     			        {              

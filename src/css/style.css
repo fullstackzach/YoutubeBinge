@@ -24,6 +24,22 @@ span {
     padding: 10px;
 }
 
+#notfound {
+    visibility: hidden;
+    /*font-weight: bold;*/
+    background: #555555;
+    color: #010101;
+    border: 3px solid #010101;
+    margin: auto;
+    width: 320px;
+    align: center;
+    margin-top: 5px;
+}
+
+#notfound.error-state {
+    visibility: visible;
+}
+
 .youtube-searcher-app {
     background: linear-gradient(328deg, rgb(153, 146, 161) 0%, rgba(31, 219, 203, 0.71) 51%, #2ce8cc 75%);
     font-family: planetiumx, Tahoma, Geneva, sans-serif;
@@ -56,7 +72,7 @@ span {
 }
 
 .result:hover {
-    background:rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.3);
 }
 
 .video-player { 
@@ -65,6 +81,7 @@ span {
     flex: 5; 
     overflow: hidden; 
     margin: 0 5px 0 5px;
+    background: rgba(0,0,0,0.1);
 }  
 
 .video-player iframe {
