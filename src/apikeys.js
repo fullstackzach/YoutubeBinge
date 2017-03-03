@@ -1,3 +1,3 @@
-const youtubeKey = "AIzaSyCf6cpUPEoNprXWutfX-GHqdwrcaNuqehc";
+const youtubeKey = "";
 
 export default youtubeKey;
