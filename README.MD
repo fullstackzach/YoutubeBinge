@@ -6,7 +6,7 @@ This is a webapp that allows a user to type and search for a youtube video. It w
 
 The App is fully responsive to different browsers and works on multiple devices
 
-You can also see a running copy here: 
+You can also see a running copy [here](https://youtube-binge.herokuapp.com/)
 
 ## Getting Started
 
@@ -35,11 +35,6 @@ Install node_module dependencies
 npm install
 ```
 
-Add a Youtube API key into apikeys.js:
-```
-const youtubeKey = "<API KEY HERE>";
-```
-
 To start up the dev server:
 ```
 npm run watch
@@ -55,12 +50,29 @@ npm run build
 
 This will create a React build in ./build/ that you can use to deploy up to a web server.
 
+Or, use Heroku:
+
+```
+Install [Heroku](https://devcenter.heroku.com/articles/heroku-cli)
+```
+
+Then, inside the project directory
+```
+git init
+heroku create -b https://github.com/mars/create-react-app-buildpack.git
+git add .
+git commit -m "react-create-app on Heroku"
+git push heroku master
+heroku open
+```
+
 ## Built With
 
 * [ReactJS](https://facebook.github.io/react/) - The web framework used
 * [Flexbox](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes) - for responsive styling
 * [Gulp.js](http://www.gulpjs.com) - Used to automate my buildstep for autoprefixing my css
 * [Gulp autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) - Gulp autoprefixer was used to make the flexbox code I created cross-browser compatible
+* [Heroku](https://www.heroku.com) - Free app serving
 
 ## Contributing
 
@@ -77,5 +89,5 @@ Open source - I don't care if you take this app and make it your own!
 ## Acknowledgments
 
 * [Codeschool.com](http://www.codeschool.com) For all of the Javascript basics I needed to get back up to speed
-* [Wesbos](http://wesbos.com/) for his awesome courses on React and ES6
+* [Wesbos](http://wesbos.com/) for his awesome courses on React, ES6 and Flexbox
 * etc
