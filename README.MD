@@ -17,7 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-* Node JS - https://nodejs.org/en/
+* [Node JS](https://nodejs.org/en/)
 
 ```
 
@@ -50,11 +50,7 @@ npm run build
 
 This will create a React build in ./build/ that you can use to deploy up to a web server.
 
-Or, use Heroku:
-
-```
-Install [Heroku](https://devcenter.heroku.com/articles/heroku-cli)
-```
+Or, use Heroku, Install: [Heroku](https://devcenter.heroku.com/articles/heroku-cli)
 
 Then, inside the project directory
 ```
@@ -73,6 +69,7 @@ heroku open
 * [Gulp.js](http://www.gulpjs.com) - Used to automate my buildstep for autoprefixing my Flexbox CSS
 * [Gulp autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer) - Gulp autoprefixer was used to make the flexbox code I created cross-browser compatible with ease
 * [Heroku](https://www.heroku.com) - Free app serving
+* [Youtube V3 SearchList API](https://developers.google.com/youtube/v3/docs/search/list)
 
 ## Contributing
 
@@ -90,4 +87,3 @@ Open source - I don't care if you take this app and make it your own!
 
 * [Codeschool.com](http://www.codeschool.com) For all of the Javascript basics I needed to get back up to speed
 * [Wesbos](http://wesbos.com/) for his awesome courses on React, ES6 and Flexbox
-* etc
