@@ -9,7 +9,7 @@ class VideoPlayer extends React.Component {
 			const title = details.snippet.title;
 			return (
 				<div>
-					<iframe title={title} src={"http://www.youtube.com/embed/" + details.id.videoId} frameBorder="0" allowFullScreen></iframe>
+					<iframe title={title} src={"https://www.youtube.com/embed/" + details.id.videoId} frameBorder="0" allowFullScreen></iframe>
 				</div>
 			) 
 		}
