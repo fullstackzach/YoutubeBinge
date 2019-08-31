@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
+    "babel-eslint": "7.2.3",
     "concurrently": "3.6.1",
-    "eslint": "^3.12.2",
-    "eslint-plugin-flowtype": "^2.29.1",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.8.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
+    "eslint": "3.19.0",
+    "eslint-plugin-flowtype": "2.50.3",
+    "eslint-plugin-jsx-a11y": "3.0.2",
+    "eslint-plugin-react": "6.10.3",
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "3.1.1",
     "react-scripts": "0.6.1"
   },
   "dependencies": {
