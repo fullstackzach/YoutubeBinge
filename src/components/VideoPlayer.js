@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class VideoPlayer extends React.Component {
 	render () {
@@ -17,7 +18,7 @@ class VideoPlayer extends React.Component {
 }
 
 VideoPlayer.propTypes = {
-  currentVideo: React.PropTypes.object.isRequired
+  currentVideo: PropTypes.object.isRequired
 }
 
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 class SearchEntryForm extends React.Component {
 	constructor() {
@@ -42,7 +44,7 @@ class SearchEntryForm extends React.Component {
 		return (
 				<form ref={(input) => this.searchForm = input} className="search-form" onChange={(e) => this.createSearch(e)} onSubmit={(e) => e.preventDefault()}>
 					Search Youtube<br/>
-					<input ref={(input) => this.searchInput = input} type="text" placeholder="Example: Cat Videos" className="searchInput" onSubmit=""/>
+					<input ref={(input) => this.searchInput = input} type="text" placeholder="Example: Cat Videos" className="searchInput"/>
 					<span>By:</span>
 					<select ref={(input) => this.searchOrder = input} type="text" className="searchOrder" onChange={(e) => this.createSearch(e)}>
 						<option value="date">Date</option>
@@ -58,8 +60,8 @@ class SearchEntryForm extends React.Component {
 }
 
 SearchEntryForm.propTypes = {
-  processSearch: React.PropTypes.func.isRequired,
-  videoResultSet: React.PropTypes.array.isRequired
+  processSearch: PropTypes.func.isRequired,
+  videoResultSet: PropTypes.array.isRequired
 }
 
 export default SearchEntryForm;
