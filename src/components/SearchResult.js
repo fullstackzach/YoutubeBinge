@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class SearchResult extends React.Component {
 	selectVideo (event) {
@@ -17,8 +18,8 @@ class SearchResult extends React.Component {
 }
 
 SearchResult.propTypes = {
-  watchVideo: React.PropTypes.func.isRequired,
-  details: React.PropTypes.object.isRequired
+  watchVideo: PropTypes.func.isRequired,
+  details: PropTypes.object.isRequired
 }
 
 export default SearchResult;

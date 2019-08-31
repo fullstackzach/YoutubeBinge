@@ -13,12 +13,12 @@ class App extends React.Component {
         this.displaySortOrder = this.displaySortOrder.bind(this);
 
 		this.state = {
-      		videoResultSet: {},
+      		videoResultSet: [],
             selectedVideo: {}
     	};
 	}
 
-    componentWillMount(){
+    componentDidMount(){
         let videoResultSet = [];
         this.setState({ videoResultSet });  
     }
