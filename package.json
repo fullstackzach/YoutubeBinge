@@ -5,7 +5,7 @@
   "devDependencies": {
     "concurrently": "5.3.0",
     "gulp": "4.0.2",
-    "gulp-autoprefixer": "7.0.1",
+    "gulp-autoprefixer": "8.0.0",
     "react-scripts": "3.4.4"
   },
   "dependencies": {
